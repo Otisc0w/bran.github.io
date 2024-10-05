@@ -72,16 +72,49 @@
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Portfolio</a>
-    <a href="#">About me</a>
-    <a href="#">My contacts</a>
+    <a href="#home">Home</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about-me">About me</a>
+    <a href="#my-contacts">My contacts</a>
   </nav>
 
-  <div class="hero-section">
-    <img src="123.png" alt="Brian Berino playing the piano">
+  <div id="home" class="hero-section">
+    <img src="123.png" alt="Brian Berino playing the piano" />
     <h1>Welcome to my website</h1>
   </div>
+
+  <div id="portfolio" class="content-section" style="display: none;">
+    <h2>Portfolio</h2>
+    <p>Here is my portfolio...</p>
+  </div>
+
+  <div id="about-me" class="content-section" style="display: none;">
+    <h2>About Me</h2>
+    <p>Here is some information about me...</p>
+  </div>
+
+  <div id="my-contacts" class="content-section" style="display: none;">
+    <h2>My Contacts</h2>
+    <p>Here are my contacts...</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelectorAll('.content-section, .hero-section').forEach(section => {
+          section.style.display = 'none';
+        });
+        const targetId = link.getAttribute('href').substring(1);
+        document.getElementById(targetId).style.display = 'block';
+      });
+    });
+
+    // Initially hide all sections except home
+    document.querySelectorAll('.content-section').forEach(section => {
+      section.style.display = 'none';
+    });
+  </script>
 
 </body>
 
