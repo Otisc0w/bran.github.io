@@ -4,133 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brian's Portfolio</title>
+  <title>Brian Berino - Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
     }
 
     header {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
+      background-color: #948c7e;
+      color: white;
+      padding: 10px 0;
+      text-align: left;
+      font-size: 24px;
+      padding-left: 20px;
     }
 
-    main {
-      padding: 2rem;
-    }
-
-    .tab {
-      display: inline-block;
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      /* Center the tabs vertically */
+      background-color: #948c7e;
       padding: 10px 20px;
-      margin-right: 10px;
-      background-color: #333;
-      color: #fff;
-      cursor: pointer;
     }
 
-    .tab.active {
-      background-color: #555;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
     }
 
-    .tab-content {
-      display: none;
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .tab-content.active {
-      display: block;
-    }
-
-    .video-container {
-      margin-bottom: 2rem;
+    .hero-section {
+      position: relative;
       text-align: center;
+      color: white;
     }
 
-    h2 {
-      color: #333;
-      text-align: center;
+    .hero-section img {
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-section h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: white;
     }
   </style>
 </head>
 
 <body>
+
   <header>
-    <h1>Brian Berino</h1>
-    <div>
-      <div class="tab active" onclick="showTab('home')">Home</div>
-      <div class="tab" onclick="showTab('bio')">Bio</div>
-      <div class="tab" onclick="showTab('portfolio')">Portfolio</div>
-      <div class="tab" onclick="showTab('contact')">Contact Details</div>
-    </div>
+    BRIAN BERINO
   </header>
-  <main>
 
-    <section id="home" class="tab-content active">
-      <div class="profile-container">
-        <h2>Welcome to My Home Page</h2>
-        <p>This is the home section of my portfolio website. Here you can find information about me and my work.</p>
-      </div>
-    </section>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Portfolio</a>
+    <a href="#">About me</a>
+    <a href="#">My contacts</a>
+  </nav>
 
-    <section id="bio" class="tab-content active">
-      <div class="profile-container">
-        <img src="bran.jpg" alt="Profile Picture" style="width:150px;height:150px;border-radius:50%;">
-        <p>Welcome to my website</p>
-      </div>
-    </section>
+  <div class="hero-section">
+    <img src="123.png" alt="Brian Berino playing the piano">
+    <h1>Welcome to my website</h1>
+  </div>
 
-    <section id="portfolio" class="tab-content">
-      <h2>Portfolio</h2>
-      <div class="video-container">
-        <h3>Chopin - Nocturne in E-flat Major</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tVVp6l2F8yc" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-container">
-        <h3>Beethoven - Moonlight Sonata</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/4Tr0otuiQuU" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-container">
-        <h3>P Diddy- baby oil</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/CvFH_6DNRCY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section id="contact" class="tab-content">
-      <h2>Contact</h2>
-      <div class="contact-container">
-        <p>Email: brian@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Address: Cooper st. moonwalk paranaque</p>
-      </div>
-    </section>
-  </main>
-  <script>
-    function showTab(tabId) {
-      var tabs = document.querySelectorAll('.tab');
-      var contents = document.querySelectorAll('.tab-content');
-
-      tabs.forEach(function (tab) {
-        tab.classList.remove('active');
-      });
-
-      contents.forEach(function (content) {
-        content.classList.remove('active');
-      });
-
-      document.querySelector('.tab[onclick="showTab(\'' + tabId + '\')"]').classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
 </body>
 
 </html>
